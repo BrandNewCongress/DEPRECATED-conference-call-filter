@@ -1,0 +1,8 @@
+{
+  "name": "BNC WebService",
+  "description": "WebService for brandnewcongress.org",
+  "repository": "TODO",
+  "logo": "",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs"
+}
