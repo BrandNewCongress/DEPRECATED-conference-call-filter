@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
+  "name": "bnc-website",
   "version": "0.2.5",
-  "description": "A sample Node.js app using Express 4",
+  "description": "WebService for brandnewcongress.org",
   "engines": {
     "node": "5.9.1"
   },
