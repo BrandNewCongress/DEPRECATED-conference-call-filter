@@ -81,7 +81,10 @@ var getUpcomingConferences = function (nameContains, callback) {
     })
 };
 
-// get upcoming conferences
+// get upcoming conferences REST call
+// path/maestro/upcomingConferences
+// Usage:
+//   nameContains : filter for conferences that contain value of "nameContains"
 app.get('/maestro/upcomingConferences', function(request, response) {
     var nameContains = (typeof request.query.nameContains === "undefined") ? "": unescape(request.query.nameContains);
     console.log('nameContains: ' + nameContains);
