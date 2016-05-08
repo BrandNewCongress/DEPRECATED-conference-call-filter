@@ -110,6 +110,17 @@ app.get('/maestro/upcomingConferences', function(request, response) {
           });
         },
         function(err) {
+          upcomingConferences.conferences.sort(function(a, b) {
+            if (a.timeInSeconds < b.timeInSeconds) {
+              return -1;
+            }
+            if (a.timeInSeconds > b.timeInSeconds) {
+              return 1;
+            }
+
+            return 0;
+          });
+
           response.send(upcomingConferences);
         }
       );
