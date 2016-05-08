@@ -2,8 +2,11 @@ var express = require('express');
 var requestModule = require("request");
 var MaestroConference = require("./maestroConference");
 var async = require("async");
+var cors = require("cors");
 
 var app = express();
+
+app.use(cors());
 
 app.set('port', (process.env.PORT || 5000));
 
