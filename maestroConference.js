@@ -19,7 +19,7 @@ var MaestroConference = class {
     var conferenceHourPst = parseInt(conferenceTimeParts[0]);
     var conferenceHourEst = conferenceHourPst + 3;
     var conferenceMinutePst = conferenceTimeParts[1];
-    this.time = conferenceHourEst + ":" + conferenceMinutePst + " ET / " + conferenceHourPst + ":" + conferenceMinutePst + " PT";
+    this.time = from24hourFormatTo12hourFormat(conferenceHourEst) + ":" + conferenceMinutePst + getPeriodFrom24hour(conferenceHourEst) + " ET / " + from24hourFormatTo12hourFormat(conferenceHourPst) + ":" + conferenceMinutePst + getPeriodFrom24hour(conferenceHourPst) + " PT";
 
     // parse signups count
     var participantsCount = 0;
@@ -49,6 +49,27 @@ var MaestroConference = class {
     this.timeInSeconds = new Date(year, monthNum, monthDate, hour, minute, 0, 0).getTime() / 1000;
 
   }
+}
+
+function from24hourFormatTo12hourFormat(hour) {
+    var h = hour;
+    if (h >= 12) {
+        h = hour-12;
+    }
+    if (h == 0) {
+        h = 12;
+    }
+
+    return h;
+}
+
+function getPeriodFrom24hour(hour) {
+    var dd = "am";
+    if (hour >= 12) {
+        dd = "pm";
+    }
+
+    return dd;
 }
 
 module.exports = MaestroConference;
