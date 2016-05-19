@@ -47,7 +47,6 @@ var MaestroConference = class {
     var hour = conferenceHourPst;
     var minute = parseInt(conferenceMinutePst);
     this.timeInSeconds = new Date(year, monthNum, monthDate, hour, minute, 0, 0).getTime() / 1000;
-
   }
 }
 

@@ -68,7 +68,9 @@ var getUpcomingConferences = function (nameContains, callback) {
         var upcomingConferenceIds = [];
         console.log('getUpcomingConferences successful');
         maestroBody.value.conference.forEach(function(entry) {
-          if (entry.name.includes(nameContains)) {
+          var entryNameLowercased = entry.name.toLowerCase();
+          var nameContainsLowercased = nameContains.toLowerCase();
+          if (entryNameLowercased.includes(nameContainsLowercased)) {
             upcomingConferenceIds.push(entry.UID);
           }
         });
