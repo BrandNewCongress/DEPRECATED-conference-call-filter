@@ -1,4 +1,6 @@
-# node-js-getting-started
+# Conference Call Filter
+
+This is a small webservice that filters conference calls made on Maestro. See [the orientation call page](http://brandnewcongress.org/call) to see it in action.
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
 
